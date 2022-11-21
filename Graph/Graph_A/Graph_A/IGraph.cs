@@ -10,7 +10,7 @@ namespace Graph_A
     public interface IGraph<T> where T : IComparable<T>
     {
         #region Properties
-        int NumVertieces { get; }
+        int NumVertices { get; }
         int NumEdges { get; }
         #endregion
 
@@ -19,6 +19,21 @@ namespace Graph_A
         void RemoveVertex(T data);
         bool HasVertex(T data);
         Vertex<T> GetVertex(T data);
+        #endregion
+
+        #region Method to work with Edges
+        void AddEdge(T from, T to);
+        void AddEdge(T from, T to, double weight);
+        bool HasEdge(T from, T to);
+        Edge<T> GetEdge(T from, T to);
+        void RemoveEdge(T from, T to);
+        #endregion
+
+        #region Methods that are essential graph algorithms
+        void BreathFirstTraversal(T start, VisitorDelegate<T> whatToDo);
+        void DepthFirstTraversal(T start, VisitorDelegate<T> whatToDo);
+        IGraph<T> MinimumSpanningTree();
+        IGraph<T> ShortestWeightedPath(T start, T end);
         #endregion
     }
 }
