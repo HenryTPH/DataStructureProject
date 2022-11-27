@@ -1,0 +1,11 @@
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\bin\Debug\GraphMatrix.exe.config
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\bin\Debug\GraphMatrix.exe
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\bin\Debug\GraphMatrix.pdb
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\bin\Debug\Graph_A.dll
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\bin\Debug\Graph_A.pdb
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\obj\Debug\GraphMatrix.csproj.AssemblyReference.cache
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\obj\Debug\GraphMatrix.csproj.SuggestedBindingRedirects.cache
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\obj\Debug\GraphMatrix.csproj.CoreCompileInputs.cache
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\obj\Debug\GraphMatrix.csproj.CopyComplete
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\obj\Debug\GraphMatrix.exe
+H:\GitHub\DataStructureProject\Graph\Graph_A\GraphMatrix\obj\Debug\GraphMatrix.pdb

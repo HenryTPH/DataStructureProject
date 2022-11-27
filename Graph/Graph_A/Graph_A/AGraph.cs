@@ -37,7 +37,7 @@ namespace Graph_A
 
         #region IGraph Implementation
         public int NumVertices { get { return vertices.Count; } }
-        public int NumEdges { get { return numEdges; } }
+        public virtual int NumEdges { get { return numEdges; } }
         #endregion
 
         #region Vertex methods
@@ -109,7 +109,7 @@ namespace Graph_A
                 throw new ApplicationException("Can't add unweighted edge!");
             }
             //Create a new Edge object and add it to the graph
-            Edge<T> e = new Edge<T>(GetVertex(from), GetVertex(to));
+            Edge<T> e = new Edge<T>(GetVertex(from), GetVertex(to), weight);
             //Add the edge object to the graph
             AddEdge(e);
         }
@@ -165,7 +165,7 @@ namespace Graph_A
                 iTreeTo = FindTree(e.To, forest);
                 if(iTreeTo != iTreeFrom)
                 {
-                    forest[iTreeFrom].MergeTrees(forest[iCurEdge]);
+                    forest[iTreeFrom].MergeTrees(forest[iTreeTo]);
                     forest[iTreeFrom].AddEdge(e.From.Data, e.To.Data, e.Weight);
                     forest = Timber(iTreeTo, forest);
                 }
@@ -201,7 +201,7 @@ namespace Graph_A
         {
             int i = 0;
             //Check each graph until you find the target vertex
-            while (forest[i].HasVertex(objVertex.Data) && i++ < forest.Length)
+            while (!forest[i].HasVertex(objVertex.Data) && i++ < forest.Length)
             {
                 ;
             }

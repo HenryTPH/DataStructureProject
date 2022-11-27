@@ -123,9 +123,9 @@ namespace GraphMatrix
                 for(int c = 0; c < matrix.GetLength(1); c++)
                 {
                     //{0, 12}: 12 characters, left align
-                    sb.Append(String.Format("{0, 12", matrix[r, c] == null ? "---- " : matrix[r, c].To.ToString()));
+                    sb.Append(String.Format("{0, 12}", matrix[r, c] == null ? "---- " : matrix[r, c].To.ToString()));
                 }
-                sb.AppendLine("/n");
+                sb.AppendLine("\n");
                 //sb.Append("\n");
             }
             //Return the vertices appended to the edges
