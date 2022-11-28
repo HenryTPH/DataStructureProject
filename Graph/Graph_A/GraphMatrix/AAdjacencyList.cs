@@ -51,7 +51,7 @@ namespace GraphMatrix
         {
             ArrayList eArray = (ArrayList)edgesArr[GetVertex(from).Index];
             Edge<T> edge = new Edge<T>(GetVertex(from), GetVertex(to));
-            return eArray.Contains(edge); // RECHECK KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+            return eArray.Contains(edge);
         }
         public override void RemoveEdge(T from, T to)
         {
