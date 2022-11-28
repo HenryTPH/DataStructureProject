@@ -84,13 +84,13 @@ namespace GraphMatrix
         }
         public override IEnumerable<Vertex<T>> EnumerateNeighbours(T data)
         {
-            ArrayList neighbours = new ArrayList();
+            List<Vertex<T>> neighbours = new List<Vertex<T>>();
             ArrayList eArr = (ArrayList)edgesArr[GetVertex(data).Index];
             foreach(Edge<T> e in eArr)
             {
                 neighbours.Add(e.To);
             }
-            return (IEnumerable<Vertex<T>>)neighbours;
+            return neighbours;
         }
         public void TestEnumerateNeighbours(T data)
         {
@@ -110,7 +110,7 @@ namespace GraphMatrix
                 ArrayList eArr = (ArrayList)edgesArr[i];
                 foreach(Edge<T> e in eArr)
                 {
-                    sb.Append(String.Format("{0, 12}", e.ToString()));
+                    sb.Append(String.Format("{0, 12}", e.ToString() + ",\t"));
                 }
                 sb.Append("\n");
             }

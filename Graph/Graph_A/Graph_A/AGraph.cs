@@ -192,6 +192,7 @@ namespace Graph_A
             {
                 this.AddVertex(v.Data);
             }
+            Edge<T>[] testAllEdge = treeTo.GetAllEdges();
             foreach(Edge<T> e in treeTo.GetAllEdges())
             {
                 this.AddEdge(e.From.Data, e.To.Data, e.Weight);

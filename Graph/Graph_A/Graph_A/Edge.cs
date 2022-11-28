@@ -73,7 +73,7 @@ namespace Graph_A
         }
         public override string ToString()
         {
-            return from + " to " + to + (isWeighted ? " , W = " + weight : "");
+            return from + " to " + to + (isWeighted ? ", W = " + weight : "");
         }
     }
 }
