@@ -306,9 +306,154 @@ namespace Graph_A
             }
             return this.GetType().Name + "\nVertices: " + result.ToString() +"\n";
         }
+        #region SSSP - Single Sort Shortest Path
         public IGraph<T> ShortestWeightedPath(T start, T end)
         {
-            throw new NotImplementedException();
+            /*
+             * vTable <-- new array if VertexData objects
+             * startingindex <-- index of starting point
+             * load vTable with initial VertexData objects
+             * set start vertex's distance to zero
+             * pq <-- instantiate a priority queue
+             * pq enqueue the starting VertexData object
+             * 
+             * while there are still VertexData objects in the priority queue
+             *  current VertexData  <-- priority Queue dequeue
+             *  if the current vertex is not know
+             *      set currentVertex to know
+             *          for each neighbour wVertex of currentVertex
+             *              wVertexData <-- get the VertexData
+             *              edge <-- get the edge object connecting wVertex and the current Vertex
+             *              proposedDistance <-- currentVertex distance + cost (edge's distance)
+             *              if wVertexData's distance > proposedDistance
+             *                  wVertexData's distance <-- proposedDistance
+             *                  wVertexData's previous <-- currentVertex
+             *                  pq enqueue wVertexData
+             * return the graph with shortest path from start point
+             */
+            VertexData[] vTable = new VertexData[vertices.Count];
+            //int iStartIndex = GetVertex(start).Index;
+            int iStartIndex = revLookUp[start];
+            for (int i = 0; i < NumVertices; i++)
+            {
+                vTable[i] = new VertexData(vertices[i], double.PositiveInfinity, null);
+            }
+            vTable[iStartIndex].Distance = 0;
+            PriorityQueue pq = new PriorityQueue();
+            pq.Enqueue(vTable[iStartIndex]);
+            while (!pq.IsEmpty())
+            {
+                VertexData vCurrent = pq.Dequeue();
+                if (!vCurrent.Known)
+                {
+                    vCurrent.Known = true;
+                    foreach (Vertex<T> wVertex in EnumerateNeighbours(vCurrent.Vertex.Data))
+                    {
+                        VertexData wVertexData = vTable[wVertex.Index];
+                        Edge<T> eCost = GetEdge(vCurrent.Vertex.Data, wVertexData.Vertex.Data);
+                        double proposedDistance = eCost.Weight + vCurrent.Distance;
+                        if (wVertexData.Distance > proposedDistance)
+                        {
+                            wVertexData.Distance = proposedDistance;
+                            wVertexData.Previous = vCurrent.Vertex;
+                            pq.Enqueue(wVertexData);
+                        }
+                    }
+                }
+                if (vCurrent.Vertex.Equals(GetVertex(end)))
+                {
+                    break;
+                }
+            }
+            //return a graph based upon the vTable
+            return BuildGraph(GetVertex(end), vTable);
         }
+        private IGraph<T> BuildGraph(Vertex<T> vEnd, VertexData[] vTable)
+        {
+            /*
+             * result <-- new instance of a graph
+             * add the vertex to the result
+             * dataLast <-- vtable[location of end]
+             * previous <-- previous of dataLast
+             * 
+             * while previous is not null
+             *  add previous to result
+             *  add the edge from last and previous to result
+             *  dataLast <-- vTable[location of previous]
+             *  previous <-- previous of dataLast
+             * return result
+             */
+            AGraph<T> result = (AGraph<T>)GetType().Assembly.CreateInstance(this.GetType().FullName);
+            result.AddVertex(vEnd.Data);
+            VertexData DataLast = vTable[vEnd.Index];
+            Vertex<T> previous = DataLast.Previous;
+            while (previous != null)
+            {
+                result.AddVertex(previous.Data);
+                Edge<T> eEdge = GetEdge(previous.Data, DataLast.Vertex.Data);
+                result.AddEdge(eEdge.From.Data, eEdge.To.Data);
+                DataLast = vTable[previous.Index];
+                previous = DataLast.Previous;
+            }
+            return result;
+        }
+        /// <summary>
+        /// The purpose of this class is to provide a sorted list of VertexData.
+        /// A call to dequeue will remove the smallest VertexData from the list
+        /// Enqueue will add a vertexData to the list and then sort the list
+        /// This queue is used to store all of the VertexData objects that
+        /// have had their tentative distance updated, but are still yet unknown
+        /// </summary>
+        internal class PriorityQueue
+        {
+            private List<VertexData> list;
+            public PriorityQueue()
+            {
+                list = new List<VertexData>();
+            }
+            internal void Enqueue(VertexData vData)
+            {
+                list.Add(vData);
+                list.Sort();
+            }
+            internal VertexData Dequeue()
+            {
+                VertexData retVal = list[0];
+                list.RemoveAt(0);
+                return retVal;
+            }
+            public bool IsEmpty()
+            {
+                if (list.Count <= 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+        internal class VertexData : IComparable
+        {
+            public Vertex<T> Vertex;
+            public double Distance;
+            public Vertex<T> Previous;
+            public bool Known;
+            public VertexData(Vertex<T> vertex, double distance, Vertex<T> previous, bool known = false)
+            {
+                Vertex = vertex;
+                this.Distance = distance;
+                this.Previous = previous;
+                this.Known = known;
+            }
+
+            public int CompareTo(object obj)
+            {
+                return this.Distance.CompareTo(((VertexData)obj).Distance);
+            }
+            public override string ToString()
+            {
+                return "Vertex: " + Vertex + " Distance " + Distance + " Previous " + Previous;
+            }
+        }
+        #endregion
     }
 }
