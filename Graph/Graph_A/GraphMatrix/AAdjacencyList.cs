@@ -56,6 +56,7 @@ namespace GraphMatrix
         public override void RemoveEdge(T from, T to)
         {
             //If edge does not exist, throw an exception
+            
             if(!HasEdge(from, to))
             {
                 throw new ApplicationException("Edge does not exist!");
@@ -64,7 +65,7 @@ namespace GraphMatrix
             Edge<T> edge = new Edge<T>(GetVertex(from), GetVertex(to));
             eArray.Remove(edge);
             edgesArr[GetVertex(from).Index] = eArray;
-            numEdges--;
+            numEdges--;            
         }
         public override void RemoveVertexAdjustEdges(Vertex<T> v)
         {
@@ -72,14 +73,14 @@ namespace GraphMatrix
             edgesArr.RemoveAt(vIndex);
             foreach(ArrayList eArr in edgesArr)
             {
-                foreach(Edge<T> e in eArr)
+                for(int i = 0; i < eArr.Count; i++)
                 {
+                    Edge<T> e = (Edge<T>)eArr[i];
                     if (e.To.Data.Equals(v.Data))
                     {
                         eArr.Remove(e);
                     }
                 }
-
             }
         }
         public override IEnumerable<Vertex<T>> EnumerateNeighbours(T data)
