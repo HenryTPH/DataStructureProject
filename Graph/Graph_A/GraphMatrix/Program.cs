@@ -254,15 +254,14 @@ namespace GraphMatrix
             Console.WriteLine("=====BreadFirstTraveral======");
             TestBreadFirstTraversal("REG", uGraph);*/
 
-            //TestMST();
-
-
-            /*IGraph<string> uGraphAL = new UGraphAL<string>();
+            IGraph<string> uGraphAL = new UGraphAL<string>();
             AddData(uGraphAL);
             Console.WriteLine(uGraphAL.ToString());
             Console.WriteLine("=====BreadFirstTraveral======");
-            TestBreadFirstTraversal("REG", uGraphAL);*/
-
+            TestBreadFirstTraversal("REG", uGraphAL);
+            Console.WriteLine("=====BreadFirstTraveral======");
+            TestDepthFirstTraversal("REG", uGraphAL);
+            TestMST();
             TestMSTAL();
             TestShortestPath();
             TestShortestPathAL();
