@@ -169,7 +169,7 @@ namespace BST
                 pd(current.Data);
             }
         }
-        public void Add(T data)
+        public override void Add(T data)
         {
             if(nRoot == null)
             {
