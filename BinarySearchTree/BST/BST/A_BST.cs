@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructureCommon
+namespace BST
 {
-    internal class Program
+    internal class A_BST
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

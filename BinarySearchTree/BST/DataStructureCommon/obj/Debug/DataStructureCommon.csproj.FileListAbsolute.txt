@@ -1,3 +1,7 @@
 H:\GitHub\DataStructureProject\BinarySearchTree\BST\DataStructureCommon\obj\Debug\DataStructureCommon.csproj.AssemblyReference.cache
-H:\GitHub\DataStructureProject\BinarySearchTree\BST\DataStructureCommon\obj\Debug\DataStructureCommon.csproj.SuggestedBindingRedirects.cache
 H:\GitHub\DataStructureProject\BinarySearchTree\BST\DataStructureCommon\obj\Debug\DataStructureCommon.csproj.CoreCompileInputs.cache
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\DataStructureCommon\bin\Debug\DataStructureCommon.dll.config
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\DataStructureCommon\bin\Debug\DataStructureCommon.dll
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\DataStructureCommon\bin\Debug\DataStructureCommon.pdb
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\DataStructureCommon\obj\Debug\DataStructureCommon.dll
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\DataStructureCommon\obj\Debug\DataStructureCommon.pdb
