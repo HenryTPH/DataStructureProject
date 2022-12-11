@@ -1,0 +1,30 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LinkedList/A-List.cs">
+    <Files>
+      <File FileName="DataStructureCommon/I_Collection.cs" Line="1" Column="1" />
+      <File FileName="DataStructureCommon/A_Collection.cs" Line="5" Column="19" />
+      <File FileName="DataStructureCommon/Class1.cs" />
+      <File FileName="LinkedList/I_List.cs" />
+      <File FileName="LinkedList/A-List.cs" Line="1" Column="1" />
+      <File FileName="LinkedList/LinkedList.cs" Line="165" Column="49" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LinkedList" expanded="True">
+            <Node name="DataStructureCommon" expanded="True" />
+            <Node name="LinkedList" expanded="True">
+              <Node name="A-List.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
