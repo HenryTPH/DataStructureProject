@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataStructureCommon
 {
-    internal class I_Collection
+    public interface I_Collection<T>: IEnumerable<T> where T: IComparable<T>
     {
+        void Add(T data);
+        void Clear();
+        bool Contains(T data);
+        bool Equals(Object other);
+        bool Remove(T data);
+        int Count { get; }
     }
 }

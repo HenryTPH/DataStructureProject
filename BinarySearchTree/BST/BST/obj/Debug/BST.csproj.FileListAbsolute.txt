@@ -1,0 +1,8 @@
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\BST\bin\Debug\BST.exe.config
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\BST\bin\Debug\BST.exe
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\BST\bin\Debug\BST.pdb
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\BST\obj\Debug\BST.csproj.AssemblyReference.cache
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\BST\obj\Debug\BST.csproj.SuggestedBindingRedirects.cache
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\BST\obj\Debug\BST.csproj.CoreCompileInputs.cache
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\BST\obj\Debug\BST.exe
+H:\GitHub\DataStructureProject\BinarySearchTree\BST\BST\obj\Debug\BST.pdb
