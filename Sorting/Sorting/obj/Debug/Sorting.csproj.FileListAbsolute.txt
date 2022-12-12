@@ -1,0 +1,8 @@
+H:\GitHub\DataStructureProject\Sorting\Sorting\obj\Debug\Sorting.csproj.AssemblyReference.cache
+H:\GitHub\DataStructureProject\Sorting\Sorting\obj\Debug\Sorting.csproj.SuggestedBindingRedirects.cache
+H:\GitHub\DataStructureProject\Sorting\Sorting\obj\Debug\Sorting.csproj.CoreCompileInputs.cache
+H:\GitHub\DataStructureProject\Sorting\Sorting\bin\Debug\Sorting.exe.config
+H:\GitHub\DataStructureProject\Sorting\Sorting\bin\Debug\Sorting.exe
+H:\GitHub\DataStructureProject\Sorting\Sorting\bin\Debug\Sorting.pdb
+H:\GitHub\DataStructureProject\Sorting\Sorting\obj\Debug\Sorting.exe
+H:\GitHub\DataStructureProject\Sorting\Sorting\obj\Debug\Sorting.pdb

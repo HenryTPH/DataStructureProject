@@ -34,7 +34,7 @@ namespace Sorting
             foreach (T item in array)
             {
                 sb.Append(item);
-                sb.Append(', ');
+                sb.Append(", ");
             }
             if(sb.Length > 0)
             {
